@@ -5,8 +5,8 @@ pipeline {
         timeout(time: 10, unit: 'MINUTES')
      }
     environment {
-    ACR_NAME = "tfacraksreg"
-    registyUrl = "tfacraksreg.azurecr.io"
+    ACR_NAME = "tfdemoacraks"
+    registyUrl = "tfdemoacraks.azurecr.io"
     IMAGE_NAME = "todolistappimg"
     IMAGE_TAG = "v1.0.0"
     registryCredential  = "to-do-acr"
