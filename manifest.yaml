@@ -18,7 +18,7 @@ spec:
         app: webapp
     spec:
       containers:
-      - image: webappdemo.azurecr.io/webappdemo/web-app:v1
+      - image: tfdemoacraks.azurecr.io/todolistappimg:v1.0.0
         name: webapp
         imagePullPolicy: Always
         resources: {}
