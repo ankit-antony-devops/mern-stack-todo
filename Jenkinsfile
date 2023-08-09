@@ -9,7 +9,7 @@ pipeline {
     registyUrl = "tfdemoacraks.azurecr.io"
     IMAGE_NAME = "todolistappimg"
     IMAGE_TAG = "v1.0.0"
-    registryCredential  = "to-do-acr"
+    registryCredential  = "tfdemoacraks"
     }
     stages { 
         stage('SCM Checkout') {
