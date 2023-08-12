@@ -55,7 +55,7 @@ pipeline {
                     app = docker.image('todotfacr.azurecr.io/todotfacrimg:latest')
                     withDockerRegistry([credentialsId: 'todotfacr', url: 'https://todotfacr.azurecr.io']) {
                     app.pull()
-                    bat "kubectl apply -f  manifest.yaml"
+                    bat "kubectl create -f ."
 
           }
         }
