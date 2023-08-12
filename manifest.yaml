@@ -1,43 +1,38 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  creationTimestamp: null
-  labels:
-    app: webapp
-  name: webapp
+  name: my-springboot-deployment
 spec:
-  replicas: 5
+  replicas: 3
   selector:
     matchLabels:
-      app: webapp
-  strategy: {}
+      app: springboot-app
   template:
     metadata:
-      creationTimestamp: null
       labels:
-        app: webapp
+        app: springboot-app
     spec:
       containers:
-      - image: tfdemoacraks.azurecr.io/todolistappimg:latest
-        name: webapp
+      - name: my-springboot-app
+        image: todotfacr.azurecr.io/todotfacr:latest
         imagePullPolicy: Always
-        resources: {}
         ports:
-          - containerPort: 80 
-status: {}
-
+        - containerPort: 8085
+# service type loadbalancer       
 ---
-
 apiVersion: v1
 kind: Service
 metadata:
-  name: webapp
   labels:
-    run: webapp
+    app: springboot-app
+    k8s-app: springboot-app
+  name: springboot-app
 spec:
   ports:
-  - port: 80
+  - name: http
+    port: 80
     protocol: TCP
-  selector:
-    app: webapp
+    targetPort: 8085
   type: LoadBalancer
+  selector:
+    app: springboot-app
