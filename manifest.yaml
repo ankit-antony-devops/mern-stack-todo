@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: my-springboot-app
-        image: todotfacr.azurecr.io/todotfacrimg:latest
+        image: todocoachacr.azurecr.io/todotfacrimg:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 8085
