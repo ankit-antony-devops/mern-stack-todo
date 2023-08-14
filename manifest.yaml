@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: my-springboot-app
-        image: todocoachacr.azurecr.io/ankit-antony-devops/mern-stack-todo:latest
+        image: todocoachacr.azurecr.io/ankit-antony-devops/mern-stack-todo:79
         imagePullPolicy: Always
         ports:
         - containerPort: 8085
